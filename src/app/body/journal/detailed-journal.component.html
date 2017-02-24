@@ -1,0 +1,10 @@
+<div *ngIf="modelEntry">
+
+
+<p class=" black">{{modelEntry.date}}</p>
+<h2 class=" black"> {{modelEntry.title}}</h2>
+<p class=" black">{{modelEntry.content}}</p>
+<img src="{{modelEntry.image}}">
+<button class="greenButton" (click)="goBack()">Back</button>
+
+</div>

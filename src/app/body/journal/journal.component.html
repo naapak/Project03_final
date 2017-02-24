@@ -1,0 +1,25 @@
+
+<app-detailed-journal [modelEntry]="SelectedJournal" ></app-detailed-journal>
+
+<section>
+
+	<h2 class="textCenter black categories caps"> Inhabitent Journal </h2>
+	<div class="marginBottom flex justifyCenter">
+	<button class="greenButton"> Post your journal </button>
+	</div>
+	<div class=" owl-carousel owl-theme">
+		<div class="serverData black textCenter" *ngFor="let ModelEntry of ModelEntryData">
+			<img src="{{ModelEntry.image}}" height="300" width="250">
+			<p class=" black">{{ModelEntry.date}}</p>
+			<h2 class="black"> {{ModelEntry.title}}</h2>
+			<button class="greenButton" (click)="viewDetailedJournal(ModelEntry)"  [routerLink]="['/journal', ModelEntry.ID]">View More</button>	
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+ 
+</script>
+
+
+
