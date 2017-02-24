@@ -1,11 +1,12 @@
 
 <app-detailed-journal [modelEntry]="SelectedJournal" ></app-detailed-journal>
+<!-- <app-journal-entry [newEntry]="postJournalEntry" > <app-journal-entry> -->
 
 <section>
 
 	<h2 class="textCenter black categories caps"> Inhabitent Journal </h2>
 	<div class="marginBottom flex justifyCenter">
-	<button class="greenButton"> Post your journal </button>
+	<!-- <button class="greenButton" (click)="postJournal()" [routerLink]="['/journal-entry']"> Post your journal </button> -->
 	</div>
 	<div class=" owl-carousel owl-theme">
 		<div class="serverData black textCenter" *ngFor="let ModelEntry of ModelEntryData">

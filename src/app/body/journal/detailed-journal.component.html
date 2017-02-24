@@ -2,9 +2,12 @@
 
 
 <p class=" black">{{modelEntry.date}}</p>
-<h2 class=" black"> {{modelEntry.title}}</h2>
+<h1 class=" black"> {{modelEntry.title}}</h1>
+<div class="boxed">
 <p class=" black">{{modelEntry.content}}</p>
-<img src="{{modelEntry.image}}">
-<button class="greenButton" (click)="goBack()">Back</button>
-
+</div>
+<img src="{{modelEntry.image}}" class="marginBottom">
+<div>
+<button class="greenButton marginBottom" (click)="goBack()">Go Back</button>
+</div>
 </div>

@@ -9,6 +9,7 @@ import {JournalComponent} from './journal.component';
   <app-app-shop></app-app-shop>
   <app-journal></app-journal>
   <app-app-adventure></app-app-adventure>
+  <app-journal-entry></app-journal-entry>
   `,
   styles: []
 })

@@ -57,13 +57,17 @@ export class JournalService {
  
  searchJournalByID(ID: number):Promise<ModelEntry> {
 
-   console.log(ID);
 
 return this.getJournalData()
              .then(JournalArray => JournalArray.find(ModelEntry => ModelEntry.ID == ID)
 
 
                );
+ }
+
+ postJournalToServer(author: string, title: string ,image: string,content: string ,categories: string[]):Promise<ModelEntry>{
+ // console.log(modelEntry);
+return this.http.post(this.JournalUrl,JSON.stringify({author: author,title:title,image:image,content:content,categories:categories})).toPromise().then(res => res.json().data).catch(this.handleError);
  }
 
 private handleError (error:any): Promise<any> {

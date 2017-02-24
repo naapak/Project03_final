@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {JournalService} from '../../services/journal.service';
 import {ModelEntry} from "../../services/journal-entry.component";
 import {DetailedJournalComponent} from './detailed-journal.component';
+import {JournalEntryComponent} from './journal-entry.component';
 declare var $:any;
  
 
@@ -13,13 +14,13 @@ declare var $:any;
 })
 export class JournalComponent implements OnInit{
 
-
+  // postJournalEntry: ModelEntry;
   SelectedJournal: ModelEntry;
 	ModelEntryData: ModelEntry[] = <ModelEntry[]>[];
 
-  constructor(private journalService: JournalService)  { 
+  constructor(private journalService: JournalService, )  { 
 
-
+// private journalEntry: JournalEntryComponent
   	// console.log(this.journalService.getJournalData());
   	// this.journalService.getJournalData().then(data => {console.log(data);});
 //   console.log(data);
@@ -48,14 +49,20 @@ journalData(): void {
 
 viewDetailedJournal(modelEntry: ModelEntry): void {
 
-  console.log("modelEntry is here");
+  // console.log("modelEntry is here");
   // console.log(modelEntry);
   this.SelectedJournal = modelEntry;
-  console.log(this.SelectedJournal);
+  // console.log(this.SelectedJournal);
 
 }
 
 
+// postJournal(){
+
+// this.postJournalEntry = this.journalEntry.newEntry;
+// this.journalService.postJournalToServer(this.postJournalEntry);
+
+// }
 
 owlCarousel() { $(document).ready(function(){
     // console.log("iam here in the carousel vjhvjhv");
