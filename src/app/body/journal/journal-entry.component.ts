@@ -42,7 +42,9 @@ this.journalService.postJournalToServer(author,title,image,content,categories)
     .then(newEntry => {
       this.Journals.push(newEntry);
       
-    });
+    }).catch((err) => {
+  console.log('errored');
+});
 
 }
 

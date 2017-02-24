@@ -20,49 +20,38 @@ export class JournalComponent implements OnInit{
 
   constructor(private journalService: JournalService, )  { 
 
-// private journalEntry: JournalEntryComponent
-  	// console.log(this.journalService.getJournalData());
-  	// this.journalService.getJournalData().then(data => {console.log(data);});
-//   console.log(data);
-
   }
-// oninit this.journalData
+
 
 ngOnInit(): void{
 
 	this.journalData();
 	}
 	
-//journalData(){} promise.arrayofarraofjournals. 
 
 journalData(): void {
 
-	let JournalDataFromserver: Promise<ModelEntry[]> = this.journalService.getJournalData();
+	let JournalDataFromserver: Promise<ModelEntry[]> = this.journalService.getJournalData().catch((err) => {
+  console.log('errored');
+});
 
 	JournalDataFromserver.then(
 		modelEntry => { this.ModelEntryData = <ModelEntry[]>modelEntry; 
       // console.log("data:=" + modelEntry); 
-		}).then(run =>{this.owlCarousel();});
+		}).then(run =>{this.owlCarousel();}).catch((err) => {
+  console.log('errored');
+});;
 	
 }
 
 
 viewDetailedJournal(modelEntry: ModelEntry): void {
 
-  // console.log("modelEntry is here");
-  // console.log(modelEntry);
+
   this.SelectedJournal = modelEntry;
-  // console.log(this.SelectedJournal);
+  
 
 }
-
-
-// postJournal(){
-
-// this.postJournalEntry = this.journalEntry.newEntry;
-// this.journalService.postJournalToServer(this.postJournalEntry);
-
-// }
 
 owlCarousel() { $(document).ready(function(){
     // console.log("iam here in the carousel vjhvjhv");
@@ -91,6 +80,6 @@ owlCarousel() { $(document).ready(function(){
 
 }
 
-//deal with it. 
+ 
 }
 
