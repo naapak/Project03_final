@@ -20,7 +20,7 @@ export class JournalService {
 
 	constructor(private http:Http) { console.log(); }
 
-  getJournalData(): Promise<ModelEntry[]> {
+ getJournalData(): Promise<ModelEntry[]> {
  	// request the data from the url.
  	
  	// let journalArray: ModelEntry[] = this.JournalArray;
@@ -49,7 +49,8 @@ export class JournalService {
 
  		}}
  		return this.JournalArray;
- 	}).catch(this.handleError);
+ 	})
+ 	.catch(this.handleError);
  	
 
  }
@@ -58,7 +59,10 @@ export class JournalService {
 
 
 return this.getJournalData()
-             .then(JournalArray => JournalArray.find(ModelEntry => ModelEntry.ID == ID)).catch(this.handleError);
+             .then(JournalArray => JournalArray.find(ModelEntry => ModelEntry.ID == ID)
+
+
+               );
  }
 
  postJournalToServer(author: string, title: string ,image: string,content: string ,categories: string[]):Promise<ModelEntry>{
@@ -66,7 +70,7 @@ return this.getJournalData()
 return this.http.post(this.JournalUrl,JSON.stringify({author: author,title:title,image:image,content:content,categories:categories})).toPromise().then(res => res.json().data).catch(this.handleError);
  }
 
- handleError (error:any): Promise<any> {
+private handleError (error:any): Promise<any> {
 	console.log('an error occured',error);
 	return Promise.reject(error.message || error);
  }

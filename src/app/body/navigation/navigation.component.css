@@ -1,0 +1,7 @@
+
+.logonavi {justify-content: space-between; align-items: center; padding-right: 30px; padding-left: 30px;}
+.banner  {height: 100vh; background: linear-gradient(rgba(0,0,0,0.2) 100%,transparent), url(assets/images/home-hero.jpg) no-repeat; background-size: contain,cover;}
+.navigation p {font-size: 50px; padding:20px;}
+.logo  {height:8rem; width:8rem;}
+.logoFull {display: flex; justify-content: center; align-items: center; }
+.logoFull img {width: 30rem; height: 30rem; padding-top: 20vh;}

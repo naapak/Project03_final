@@ -1,0 +1,11 @@
+.shopCategories {
+	width: 100%;
+	border: 1px solid grey; border-top: 10px solid grey; 
+	margin-top: 2rem; 
+	margin-bottom: 5rem;
+	margin-right: 2%;
+	margin-left:2%;
+}
+
+.shopCategories p {color: black; padding-bottom: 1rem;}
+.shopCategories img { height: 100px; width: 100px; padding-bottom: 2rem; padding-top: 2rem;}
